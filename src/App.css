@@ -1,0 +1,24 @@
+/* ESTILOS DARK */
+.dark.btn-theme {
+  border: 2px solid white;
+  background-color: rgb(143, 31, 218);
+  color: white;
+}
+
+.dark .btn {
+  border: 2px solid white;
+}
+
+.dark .image-card {
+  border: 2px solid white;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: white;
+}
+
+.App.dark {
+  background-color: rgb(44, 44, 44);
+}

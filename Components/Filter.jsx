@@ -20,7 +20,7 @@ function Filter({
         ¡Inspire yourself and search the bests{" "}
         <span className="weight-900">GIFS</span>!{" "}
       </h1>
-      <img src="/resource/ilustra_header.svg" alt="lustracion header" />
+      <img src="/resources/ilustra_header.svg" alt="lustracion header" />
       <form className="flex" onSubmit={handleSearchBtn}>
         .
         <div className="flex align-items-center">
@@ -39,7 +39,7 @@ function Filter({
               }`}
               onChange={handleSearch}
               value={search}
-              placeholder=" Buscar Gif"
+              placeholder=" Search Gif"
               type="text"
             />
           </div>

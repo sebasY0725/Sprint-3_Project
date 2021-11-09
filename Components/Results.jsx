@@ -14,7 +14,7 @@ const Results = ({ mode, dataGif, searchBtn, send }) => {
                   : " margin-top-20 max font color-white weight-400 flex justify-content-center "
               }`}
             >
-              Realiza tu busqueda
+              Make your search
             </h1>
           ) : dataGif !== [] && searchBtn === true ? (
             Loader()

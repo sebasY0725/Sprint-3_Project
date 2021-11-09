@@ -7,54 +7,54 @@ import "../Components/App.css";
 function App(props) {
   const [mode, upDateMode] = useState(true);
   const [search, updateSearch] = useState("");
-  const [searchBtn, actualizarBuscarBtn] = useState(false);
-  const [dataGif, actualizarDataGif] = useState([]);
-  const [enviar, actualizarEnviar] = useState("");
-  const [AutoData, actualizarDataAuto] = useState([]);
-  const manejarModo = () => {
+  const [searchBtn, updateSearchBtn] = useState(false);
+  const [dataGif, updateDataGif] = useState([]);
+  const [send, updateSend] = useState("");
+  const [AutoData, updateAutoData] = useState([]);
+  const handleMode = () => {
     upDateMode(!mode);
   };
-  const manejarBusqueda = (e) => {
+  const handleSearch = (e) => {
     const busqueda = e.target.value;
     updateSearch(busqueda);
   };
-  const manejarCancelarBusqueda = () => {
+  const handeCancelSearch = () => {
     updateSearch("");
   };
-  const manejarBuscarBtn = (e) => {
+  const handleSearchBtn = (e) => {
     e.preventDefault();
-    actualizarBuscarBtn(true);
-    actualizarEnviar(search);
+    updateSearchBtn(true);
+    updateSend(search);
   };
   useEffect(() => {
     if (searchBtn === true) {
       let key = "KhppVowaFbDBvza3viJRfIbaXZofRSVs";
-      let urlSearch = "https://api.giphy.com/v1/gifs/search";
-      let petision = fetch(
+      let urlSearch = "https://api.giphy.com/v1/gifs";
+      let request = fetch(
         `${urlSearch}?api_key=${key}&q=${search}&limit=12&offset=0&rating=g&lang=en`
       );
-      petision
+      request
         .then((res) => {
           return res.json();
         })
         .then((data) => {
-          actualizarBuscarBtn(false);
+          updateSearchBtn(false);
           updateSearch("");
-          actualizarDataGif(data.data);
+          updateDataGif(data.data);
         });
     }
   }, [searchBtn, search]);
   useEffect(() => {
     let key = "KhppVowaFbDBvza3viJRfIbaXZofRSVs";
-    let petision = fetch(
+    let request = fetch(
       `https://api.giphy.com/v1/gifs/search/tags?api_key=${key}&q=${search}&limit=5&offset=0&rating=g&lang=en`
     );
-    petision
+    request
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        actualizarDataAuto(data.data);
+        updateAutoData(data.data);
       });
   }, [search]);
   return (
@@ -65,23 +65,23 @@ function App(props) {
           : " App flex flex-direction align-items-center modo-dark "
       }`}
     >
-      <Header manejarModo={manejarModo} modo={mode} />
+      <Header handleMode={handleMode} mode={mode} />
       <Filter
-        modo={mode}
-        manejarBusqueda={manejarBusqueda}
+        mode={mode}
+        handleSearch={handleSearch}
         search={search}
-        manejarBuscarBtn={manejarBuscarBtn}
+        handleSearchBtn={handleSearchBtn}
         dataGif={dataGif}
         AutoData={AutoData}
-        manejarCancelarBusqueda={manejarCancelarBusqueda}
+        handeCancelSearch={handeCancelSearch}
       />
       <Results
         dataGif={dataGif}
-        actualizarDataGif={actualizarDataGif}
+        updateDataGif={updateDataGif}
         searchBtn={searchBtn}
         search={search}
-        moe={mode}
-        enviar={enviar}
+        mode={mode}
+        send={send}
       />
     </div>
   );

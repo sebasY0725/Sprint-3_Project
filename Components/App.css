@@ -26,3 +26,13 @@
 .App.dark {
   background-color: rgb(44, 44, 44);
 }
+
+.suggestions-container {
+  width: 570px;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #6809e1;
+  position: absolute;
+  top: 415px;
+}

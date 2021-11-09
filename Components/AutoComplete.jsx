@@ -1,6 +1,7 @@
 import React from "react";
 
 function AutoCompletarGif({ handleSearchBtn, AutoData }) {
+  console.log(AutoData);
   return (
     <div
       onClick={handleSearchBtn}
@@ -25,7 +26,6 @@ function Suggestions({ AutoData }) {
             <li className="suggestions font padding-left-40 flex align-items-center color-gris">
               {""}
               {data.name}
-              {""}
             </li>
           </div>
         );

@@ -7,8 +7,8 @@ function Header({ mode, handleMode }) {
           className="margin-left-69 "
           src={`${
             mode
-              ? "/resource/logo-desktop.svg"
-              : "/resource/logo-mobile-modo-noct.svg"
+              ? "/resources/logo-desktop.svg"
+              : "/resources/logo-mobile-modo-noct.svg"
           }`}
           width="59px"
           alt="logo"

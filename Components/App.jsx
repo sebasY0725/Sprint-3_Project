@@ -1,6 +1,8 @@
-import { useState } from "react";
-
-import "../src/App.css";
+import { useState, useEffect } from "react";
+import Filter from "./Filter";
+import Header from "./Header";
+import Results from "./Results";
+import "../Components/App.css";
 
 // modo Dark
 export default function App() {
